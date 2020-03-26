@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/TextAppearance.AppCompat.Large"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_weight="3"
+    android:drawableRight="@drawable/ic_send_blue_24dp"
+    android:gravity="start"
+    android:padding="15dp"
+    android:text="hello"
+    android:textColor="@color/flexblue" />
+
+
+
+
+
