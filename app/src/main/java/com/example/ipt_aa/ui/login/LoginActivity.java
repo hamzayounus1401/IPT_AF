@@ -1,7 +1,6 @@
 package com.example.ipt_aa.ui.login;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
@@ -59,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                     passwordEditText.setError("Password should be greater than 4");
 
                 else {
-                    loginButton.setBackground(new ColorDrawable(Color.BLUE));
+                    loginButton.setBackground(new ColorDrawable(getColor(R.color.dark_slate_blue)));
                     loginButton.setEnabled(true);
                 }
             }
