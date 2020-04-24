@@ -20,4 +20,6 @@ public interface Api {
 
     @GET("api/test/resource1")
     Call<String> getUser(@Header("Authorization") String authorization);
+
+
 }
