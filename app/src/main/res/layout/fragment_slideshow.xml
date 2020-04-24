@@ -3,10 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.github.barteksc.pdfviewer.PDFView
-        android:id="@+id/pdfView"
-
+    <HorizontalScrollView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:id="@+id/table1">
+
+
+        </TableLayout>
+    </HorizontalScrollView>
 
 </RelativeLayout>

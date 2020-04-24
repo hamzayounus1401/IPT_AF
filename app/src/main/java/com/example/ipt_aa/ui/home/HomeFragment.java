@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import com.example.ipt_aa.R;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    TableLayout mTableLayout;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -23,4 +25,5 @@ public class HomeFragment extends Fragment {
 
         return root;
     }
+
 }
