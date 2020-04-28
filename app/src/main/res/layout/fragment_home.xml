@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,10 +31,11 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        app:animationDuration="300"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:title="University Information"
-        app:inner_view="@layout/location"
+        app:inner_view="@layout/university_details"
         app:expandOnClick="true" />
 
     <com.alespero.expandablecardview.ExpandableCardView
@@ -40,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:title="Personal Information"
-        app:inner_view="@layout/location"
+        app:inner_view="@layout/personel_information"
         app:expandOnClick="true" />
 
     <com.alespero.expandablecardview.ExpandableCardView
@@ -53,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:title="Contact Information"
-        app:inner_view="@layout/location"
+        app:inner_view="@layout/contact_information"
         app:expandOnClick="true" />
 
     <com.alespero.expandablecardview.ExpandableCardView
@@ -66,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:title="Family Information"
-        app:inner_view="@layout/location"
+        app:inner_view="@layout/family_information"
         app:expandOnClick="true" />
 
     <com.alespero.expandablecardview.ExpandableCardView
@@ -78,9 +86,12 @@
         android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:title="Semester Attendance"
-        app:inner_view="@layout/location"
+        app:title="Semesters GPA"
+        app:inner_view="@layout/attendance_chart"
         app:expandOnClick="true" />
 
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

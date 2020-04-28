@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:barchart="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="50dp"
+
+
+    android:orientation="vertical">
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/buttonMaps"
+        android:background="#e0e0e0"
+        android:backgroundTint="#e0e0e0" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <me.ithebk.barchart.BarChart
+            android:id="@+id/bar_chart_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            barchart:bar_color="@color/colorPrimary"
+            barchart:bar_max_value="100"
+            barchart:bar_show_animation="true"
+            barchart:bar_show_auto_color="true"
+            barchart:bar_show_value="true"
+            barchart:bar_spaces="20dp"
+            barchart:bar_text_color="#808080"
+            barchart:bar_text_size="10sp"
+            barchart:bar_type="vertical"
+            barchart:bar_width="40dp" />
+    </HorizontalScrollView>
+
+
+</LinearLayout>

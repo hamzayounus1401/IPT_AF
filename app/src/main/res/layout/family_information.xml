@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/buttonMaps"
+
+        android:background="#e0e0e0"
+        android:backgroundTint="#e0e0e0" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18dip"
+                    android:paddingRight="18dip"
+                    android:paddingTop="18dip"
+                    android:text="Relation"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18dip"
+                    android:paddingRight="18dip"
+                    android:paddingTop="18dip"
+                    android:textStyle="bold"
+                    android:text="Name"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18dip"
+                    android:paddingRight="18dip"
+                    android:paddingTop="18dip"
+                    android:text="CNIC"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:paddingLeft="18dip"
+                    android:paddingRight="18dip"
+                    android:paddingTop="18dip"
+                    android:id="@+id/textViewGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="For With holding Tax"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewRType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18dip"
+                    android:paddingRight="18dip"
+                    android:text="Father"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:id="@+id/textViewRName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Muhammad Younus"
+                    android:textColor="#000"
+                    android:paddingLeft="18dip"
+                    android:paddingRight="18dip"
+
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18dip"
+                    android:paddingRight="18dip"
+                    android:text="6463622226162"
+                    android:id="@+id/textViewRCNIC"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+                <CheckBox
+                    android:id="@+id/textViewCheck"
+                    android:layout_width="wrap_content"
+                    android:paddingLeft="20dip"
+                    android:paddingRight="18dip"
+
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+
+        </TableLayout>
+    </HorizontalScrollView>
+
+
+</LinearLayout>

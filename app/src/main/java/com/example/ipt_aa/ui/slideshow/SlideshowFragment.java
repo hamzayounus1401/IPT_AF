@@ -36,19 +36,17 @@ public class SlideshowFragment extends Fragment {
             TextView c5 = new TextView(getContext());
             TextView c6 = new TextView(getContext());
             TextView c7 = new TextView(getContext());
-            TextView c8 = new TextView(getContext());
             tr.setBackground(new ColorDrawable(Color.BLUE));
 
             if (i == 0) {
 
-                c1.setText("Type/#");
-                c2.setText(String.valueOf("Total"));
-                c3.setText(String.valueOf("Obtain"));
-                c4.setText("Wtg");
-                c5.setText(String.valueOf("Avg"));
-                c6.setText(String.valueOf("Std"));
-                c7.setText("Min");
-                c8.setText(String.valueOf("Max"));
+                c1.setText("Code");
+                c2.setText(String.valueOf("Course Name"));
+                c3.setText(String.valueOf("Crd Hrs"));
+                c4.setText("Grade");
+                c5.setText(String.valueOf("Points"));
+                c6.setText(String.valueOf("Type"));
+                c7.setText("Remarks");
 
                 c1.setTextColor(Color.WHITE);
                 c2.setTextColor(Color.WHITE);
@@ -57,19 +55,28 @@ public class SlideshowFragment extends Fragment {
                 c5.setTextColor(Color.WHITE);
                 c6.setTextColor(Color.WHITE);
                 c7.setTextColor(Color.WHITE);
-                c8.setTextColor(Color.WHITE);
 
 
+            } else if (i == 3) {
+
+                c1.setText("");
+                c2.setText(String.valueOf(""));
+                c3.setText(String.valueOf(""));
+                c4.setText("");
+                c5.setText(String.valueOf(""));
+                c6.setText(String.valueOf("Semester 4"));
+                c7.setText(" Cgpa");
+
+                tr.setBackground(new ColorDrawable(Color.WHITE));
             } else {
 
                 c1.setText("QUIZ/3");
                 c2.setText(String.valueOf("3"));
                 c3.setText(String.valueOf("3"));
-                c4.setText("4");
+                c4.setText("");
                 c5.setText(String.valueOf("5"));
                 c6.setText(String.valueOf("5"));
                 c7.setText("2");
-                c8.setText(String.valueOf("1"));
 
                 tr.setBackground(new ColorDrawable(Color.WHITE));
             }
@@ -82,7 +89,6 @@ public class SlideshowFragment extends Fragment {
             c5.setPadding(20, 20, 20, 20);
             c6.setPadding(20, 20, 20, 20);
             c7.setPadding(20, 20, 20, 20);
-            c8.setPadding(20, 20, 20, 20);
 
             tr.addView(c1);
             tr.addView(c2);
@@ -91,7 +97,6 @@ public class SlideshowFragment extends Fragment {
             tr.addView(c5);
             tr.addView(c6);
             tr.addView(c7);
-            tr.addView(c8);
 
             tr.setHorizontalScrollBarEnabled(true);
             mtablelayout.addView(tr);

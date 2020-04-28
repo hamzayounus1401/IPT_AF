@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/buttonMaps"
+
+        android:background="#e0e0e0"
+        android:backgroundTint="#e0e0e0" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Name:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Hamza Younus"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="DOB:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/textViewdob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1/14/1997"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Blood Group"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/textViewBloodGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="A+"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Gender:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/textViewGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Nationality:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/textViewNationality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Pakistani"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Email:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/textViewEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hamza.nwlife@hotmail.com"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="CNIC:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/textViewCNIC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3726255252522"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </HorizontalScrollView>
+
+
+</LinearLayout>

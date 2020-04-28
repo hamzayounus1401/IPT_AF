@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/buttonMaps"
+
+        android:background="#e0e0e0"
+        android:backgroundTint="#e0e0e0" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Permanent Address"
+                    android:layout_span="2"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Current Address"
+                    android:textColor="#000"
+                    android:layout_span="2"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Address:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/textViewPAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Flat No 13, Maraim Center,\n near BVS school, Saddar, Karachil, Pakistan"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+
+                    android:text="Address:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/textViewCAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flat No 13, Maraim Center, near BVS school,\n Saddar, Karachil, Pakistan"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Phone No:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/textViewPPhoneNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02321212211"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Phone No:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewCPhoneNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02321234321"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:padding="18dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewPCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Karachi"
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="City:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewCCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Karachi"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:padding="18dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Country:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPCountry"
+                    android:text="Pakistan"
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="18dip"
+                    android:text="Country:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewCCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pakistan"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </HorizontalScrollView>
+
+
+</LinearLayout>
