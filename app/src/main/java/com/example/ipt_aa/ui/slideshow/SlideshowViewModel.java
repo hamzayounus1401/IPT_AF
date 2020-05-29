@@ -14,9 +14,21 @@ public class SlideshowViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
+    public interface marks {
+        void onEvent(boolean is);
+    }
+
     public SlideshowViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is slideshow fragment");
+        listener.onEvent(false);
+
+    }
+
+    static marks listener;
+
+    public static void setOnEventListener(marks li) {
+        listener = li;
     }
 
     public LiveData<SemesterTranscript> getText() {

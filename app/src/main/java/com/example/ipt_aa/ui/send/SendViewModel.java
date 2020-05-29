@@ -11,7 +11,9 @@ public class SendViewModel extends ViewModel {
     public SendViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is send fragment");
+
     }
+
 
     public LiveData<String> getText() {
         return mText;

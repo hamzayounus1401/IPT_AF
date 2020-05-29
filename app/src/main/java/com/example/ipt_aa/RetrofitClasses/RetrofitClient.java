@@ -1,4 +1,6 @@
-package com.example.ipt_aa.data;
+package com.example.ipt_aa.RetrofitClasses;
+
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -6,12 +8,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    private static final String BASE_URL = "http://192.168.1.101:45459/";
+    private static final String BASE_URL = "http://192.168.1.107:45457/";
     private static RetrofitClient retrofitClient;
     private Retrofit retrofit;
 
     public RetrofitClient() {
         OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
+        clientBuilder.callTimeout(10, TimeUnit.SECONDS);
+        clientBuilder.connectTimeout(10, TimeUnit.SECONDS);
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
 
 

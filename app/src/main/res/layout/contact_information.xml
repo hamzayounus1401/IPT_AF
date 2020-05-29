@@ -28,23 +28,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="18dip"
-                    android:text="Permanent Address"
-                    android:layout_span="2"
-                    android:textColor="#000"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="18dip"
                     android:text="Current Address"
-                    android:textColor="#000"
                     android:layout_span="2"
+                    android:textColor="#000"
                     android:textSize="18dp"
                     android:textStyle="bold" />
+
+
 
 
             </TableRow>
@@ -64,7 +54,7 @@
 
                 <TextView
 
-                    android:id="@+id/textViewPAddress"
+                    android:id="@+id/c_i_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -72,26 +62,6 @@
                     android:textColor="#000"
                     android:textSize="14dp" />
 
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="18dip"
-
-                    android:text="Address:"
-                    android:textColor="#000"
-                    android:textSize="14dp"
-                    android:textStyle="bold" />
-
-                <TextView
-
-                    android:id="@+id/textViewCAddress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Flat No 13, Maraim Center, near BVS school,\n Saddar, Karachil, Pakistan"
-                    android:textColor="#000"
-                    android:textSize="14dp" />
-
             </TableRow>
 
             <TableRow
@@ -109,31 +79,12 @@
 
                 <TextView
 
-                    android:id="@+id/textViewPPhoneNo"
+                    android:id="@+id/c_i_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="02321212211"
                     android:textColor="#000"
                     android:textSize="14dp" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="18dip"
-                    android:text="Phone No:"
-                    android:textColor="#000"
-                    android:textSize="14dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textViewCPhoneNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="02321234321"
-                    android:textColor="#000"
-                    android:textSize="14dp" />
-
             </TableRow>
 
             <TableRow
@@ -145,6 +96,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="City:"
+                    android:textColor="#000"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -152,26 +105,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Karachi"
-                    android:textSize="14dp" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="18dip"
-                    android:text="City:"
-                    android:textColor="#000"
-                    android:textSize="14dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textViewCCity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Karachi"
                     android:textColor="#000"
                     android:textSize="14dp" />
-
             </TableRow>
 
             <TableRow
@@ -190,24 +125,6 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textViewPCountry"
                     android:text="Pakistan"
-                    android:textSize="14dp" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="18dip"
-                    android:text="Country:"
-                    android:textColor="#000"
-                    android:textSize="14dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textViewCCountry"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pakistan"
-                    android:textColor="#000"
                     android:textSize="14dp" />
 
             </TableRow>

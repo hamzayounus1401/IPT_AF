@@ -148,13 +148,8 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
             myTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     viewPager2.setCurrentItem(4);
-                    if (viewPager2.getOrientation() == ViewPager2.ORIENTATION_VERTICAL)
-                        viewPager2.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
-                    else {
-                        viewPager2.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
-                    }
+
                 }
             });
         }

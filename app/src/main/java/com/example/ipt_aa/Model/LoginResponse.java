@@ -1,9 +1,10 @@
-package com.example.ipt_aa.data;
+package com.example.ipt_aa.Model;
 
 public class LoginResponse {
     String access_token;
     String token_type;
     String expires_in;
+
 
     public String getAccess_token() {
         return access_token;

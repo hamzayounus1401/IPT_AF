@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rootlayoutlogin"
     tools:context=".ui.login.LoginActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -86,11 +87,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="-80dp"
+                    android:layout_marginTop="-100dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="12dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp"
+                    android:id="@+id/cardviewlogin"
                     app:cardUseCompatPadding="true"
                     app:contentPadding="16dp">
 
@@ -194,6 +196,14 @@
 
 
         </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressbarlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" />
 
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
