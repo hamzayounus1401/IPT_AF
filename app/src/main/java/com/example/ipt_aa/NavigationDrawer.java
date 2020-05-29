@@ -1,25 +1,29 @@
 package com.example.ipt_aa;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.ipt_aa.ui.send.SendFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
-public class NavigationDrawer extends AppCompatActivity {
+public class NavigationDrawer extends AppCompatActivity implements MyFirebaseMessagingService.marks, SendFragment.marks {
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    TextView marks;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,7 @@ public class NavigationDrawer extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,10 +39,14 @@ public class NavigationDrawer extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        //These lines should be added in the OnCreate() of your main activity
+        marks = (TextView) MenuItemCompat.getActionView(navigationView.getMenu().
+                findItem(R.id.nav_send));
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
@@ -46,6 +55,8 @@ public class NavigationDrawer extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        MyFirebaseMessagingService.setOnEventListener(this);
+        SendFragment.setOnEventListener(this);
     }
 
     @Override
@@ -61,4 +72,41 @@ public class NavigationDrawer extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //SessionManager sessionManager = new SessionManager(getApplication());
+        //sessionManager.checkLogin();
+    }
+
+
+    @Override
+    public void onEvent(boolean is) {
+        if (is == true) {
+            runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    marks.setTextColor(getResources().getColor(R.color.colorAccent));
+                    marks.setText("1+");
+                    marks.setGravity(Gravity.CENTER_VERTICAL);
+                }
+            });
+
+        }
+        if (is == false) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    marks.setTextColor(getResources().getColor(R.color.colorAccent));
+                    marks.setText("");
+                    marks.setGravity(Gravity.CENTER_VERTICAL);
+                }
+            });
+
+        }
+
+    }
+
 }
