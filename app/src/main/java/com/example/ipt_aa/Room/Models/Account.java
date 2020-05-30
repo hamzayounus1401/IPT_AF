@@ -10,7 +10,11 @@ import androidx.room.PrimaryKey;
 public class Account {
     @NonNull
     @PrimaryKey
-    public String id;
+    public int id;
+
+    @ColumnInfo(name = "roll")
+    public String roll;
+
     @ColumnInfo(name = "fullName")
     public String fullName;
 

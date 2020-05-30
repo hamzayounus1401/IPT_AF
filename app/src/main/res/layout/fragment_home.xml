@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:screenOrientation="portrait"
     android:id="@+id/f_h_s_r_l">
 
     <RelativeLayout
@@ -33,12 +34,15 @@
         android:id="@+id/main_profile_card"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         app:animationDuration="300"
+        android:outlineSpotShadowColor="@color/face_light_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:title="University Information"
+
         app:inner_view="@layout/university_details"
         app:expandOnClick="true" />
 
@@ -68,23 +72,11 @@
         app:inner_view="@layout/contact_information"
         app:expandOnClick="true" />
 
-    <com.alespero.expandablecardview.ExpandableCardView
-        android:id="@+id/main_profile_car3"
+
+            <com.alespero.expandablecardview.ExpandableCardView
+                android:id="@+id/main_profile_car4"
         android:layout_marginLeft="20dp"
         android:layout_below="@id/main_profile_card2"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:title="Family Information"
-        app:inner_view="@layout/family_information"
-        app:expandOnClick="true" />
-
-    <com.alespero.expandablecardview.ExpandableCardView
-        android:id="@+id/main_profile_car4"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@id/main_profile_car3"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"

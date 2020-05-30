@@ -2,7 +2,6 @@ package com.example.ipt_aa.ui.login;
 
 import android.app.Application;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -106,6 +105,8 @@ public class LoginViewModel extends AndroidViewModel {
             public void onResponse(Call<Student> call, Response<Student> response) {
                 if (response.isSuccessful()) {
                     account.setValue(response.body());
+                    Log.d("aa", String.valueOf(response.body().getId()));
+                    sessionManager.saveId(response.body().getId());
                     Log.d(account.getValue().getFullName(), "Hamzaaa");
                     Log.d("Hamzaaa2", response.body().getFullName());
                     inert(response.body());
@@ -124,7 +125,7 @@ public class LoginViewModel extends AndroidViewModel {
     public void inert(Student student) {
         Account account = new Account();
         account.fullName = student.getFullName();
-        account.id = student.getRoll();
+        account.roll = student.getRoll();
         account.address = student.getAddress();
         account.cnic = student.getCnic();
         account.email = student.getEmail();
@@ -134,6 +135,8 @@ public class LoginViewModel extends AndroidViewModel {
         String[] dob = student.getDob().split("T");
         account.dob = dob[0];
         account.phone = student.getPhone();
+        account.id = student.getId();
+        Log.d("aaaa", String.valueOf(student.getId()));
         mRepository.insert(account);
 
     }
@@ -151,28 +154,28 @@ public class LoginViewModel extends AndroidViewModel {
                         // Get new Instance ID token
                         String token = task.getResult().getToken().toString();
                         Log.d("notification", token);
-                        sendRegistrationToServer(token);
+                        // sendRegistrationToServer(token);
                         // Log and toast
 
                     }
                 });
     }
 
-    public void sendRegistrationToServer(String token) {
-        Log.d("token,,", token);
-        Call<String> setNotification = api.registerForNotification(sessionManager.getToken(), token);
-        setNotification.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Log.d("notification", response.message());
-                Toast.makeText(getApplication().getApplicationContext(), "Notification" + response.body(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-
-            }
-        });
-    }
+//    public void sendRegistrationToServer(String token) {
+//        Log.d("token,,", token);
+//        Call<String> setNotification = api.registerForNotification(sessionManager.getToken(), token);
+//        setNotification.enqueue(new Callback<String>() {
+//            @Override
+//            public void onResponse(Call<String> call, Response<String> response) {
+//                Log.d("notification", response.message());
+//                Toast.makeText(getApplication().getApplicationContext(), "Notification" + response.body(), Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<String> call, Throwable t) {
+//
+//            }
+//        });
+//    }
 
 }

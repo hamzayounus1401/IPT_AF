@@ -20,7 +20,9 @@ public interface AccountDao {
 
 
     @Query("SELECT * FROM Account  s WHERE s.id LIKE :id  LIMIT 1")
-    LiveData<Account> getById(String id);
+    LiveData<Account> getById(int id);
+
+
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Account account);

@@ -1,49 +1,59 @@
 package com.example.ipt_aa.ui.slideshow;
 
+import android.app.Application;
+import android.util.Log;
+import android.widget.Toast;
+
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import com.example.ipt_aa.Model.CourseGrade;
-import com.example.ipt_aa.Model.SemesterTranscript;
+import com.example.ipt_aa.Model.Transcript;
+import com.example.ipt_aa.RetrofitClasses.Api;
+import com.example.ipt_aa.RetrofitClasses.RetrofitClient;
+import com.example.ipt_aa.Room.Repository;
+import com.example.ipt_aa.SessionManager;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class SlideshowViewModel extends ViewModel {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    private MutableLiveData<String> mText;
+public class SlideshowViewModel extends AndroidViewModel {
 
-    public interface marks {
-        void onEvent(boolean is);
+    private Repository mRepository;
+    private Api api;
+    private MutableLiveData<List<Transcript>> transcriptMutableLiveData = new MutableLiveData<>();
+    SessionManager sessionManager;
+
+    public SlideshowViewModel(Application application) {
+        super(application);
+        sessionManager = new SessionManager(application);
     }
 
-    public SlideshowViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
-        listener.onEvent(false);
+    public LiveData<List<Transcript>> getTranscript() {
+        api = RetrofitClient.getInstance().getApi();
 
+        int id = sessionManager.getUserId();
+        Log.d("aaaab", String.valueOf(id));
+        Call<List<Transcript>> transcriptCall = api.getTranscript(id);
+        transcriptCall.enqueue(new Callback<List<Transcript>>() {
+            @Override
+            public void onResponse(Call<List<Transcript>> call, Response<List<Transcript>> response) {
+                if (response.isSuccessful()) {
+                    transcriptMutableLiveData.setValue(response.body());
+                    Toast.makeText(getApplication(), response.message(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Transcript>> call, Throwable t) {
+
+            }
+        });
+        return transcriptMutableLiveData;
     }
 
-    static marks listener;
 
-    public static void setOnEventListener(marks li) {
-        listener = li;
-    }
-
-    public LiveData<SemesterTranscript> getText() {
-
-        return getTranscriptData("k163632");
-
-
-    }
-
-    public LiveData<SemesterTranscript> getTranscriptData(String id) {
-        MutableLiveData<SemesterTranscript> semesterTranscript = new MutableLiveData<>();
-        List<CourseGrade> courseGrades = new ArrayList<>();
-        SemesterTranscript semesterTranscript1 = new SemesterTranscript("15", "15", "3", "3", courseGrades);
-
-        semesterTranscript.setValue(semesterTranscript1);
-        return semesterTranscript;
-    }
-}
+};

@@ -24,6 +24,7 @@ public class SendFragment extends Fragment {
 
     static marks listener;
     ViewPager2 viewPager;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         sendViewModel =
@@ -59,7 +60,6 @@ public class SendFragment extends Fragment {
 
             }
         });
-
 
 
         return root;

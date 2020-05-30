@@ -4,6 +4,7 @@ package com.example.ipt_aa;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.example.ipt_aa.ui.login.LoginActivity;
 
@@ -58,6 +59,13 @@ public class SessionManager {
         editor.commit();
     }
 
+    public void saveId(int id) {
+        // Storing id in pref
+        Log.d("aa3", String.valueOf(id));
+        editor.putInt("id", id);
+        editor.commit();
+        Log.d("aa4", String.valueOf(pref.getInt("id", 0)));
+    }
     /**
      * Check login method wil check user login status
      * If false it will redirect user to login page
@@ -127,8 +135,12 @@ public class SessionManager {
         return pref.getString(KEY_TOKEN_BEARER, null);
     }
 
-    public String getUserId() {
-        return pref.getString(KEY_NAME, null);
+    public int getUserId() {
+        return pref.getInt("id", 0);
     }
 
+
+    public String getUserRoll() {
+        return pref.getString(KEY_NAME, null);
+    }
 }

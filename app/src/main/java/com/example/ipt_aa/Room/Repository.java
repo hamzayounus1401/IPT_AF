@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.ipt_aa.Room.DAOs.AccountDao;
 import com.example.ipt_aa.Room.Models.Account;
@@ -12,7 +13,8 @@ import com.example.ipt_aa.Room.Models.Account;
 public class Repository {
 
     private AccountDao mAccountDto;
-    private LiveData<Account> mAccount;
+    private MutableLiveData<Account> mAccount;
+
 
     public Repository(Application application) {
         RoomDatabase db = RoomDatabase.getDatabase(application);
@@ -21,7 +23,7 @@ public class Repository {
 
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
-    public LiveData<Account> getStudent(String id) {
+    public LiveData<Account> getStudent(int id) {
         return mAccountDto.getById(id);
     }
 
@@ -59,6 +61,7 @@ public class Repository {
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.
     public void insert(final Account account) {
+
         RoomDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
@@ -71,5 +74,7 @@ public class Repository {
             }
         });
     }
+
+
 }
 

@@ -56,12 +56,13 @@ public class HomeFragment extends Fragment {
         tv_phone = root.findViewById(R.id.c_i_phone);
         pullToRefresh.setOnRefreshListener(listenerSwipeRefresh);
 
-        homeViewModel.getAccount().observe(this, new Observer<Account>() {
+        homeViewModel.getAccount().observe(getViewLifecycleOwner(), new Observer<Account>() {
             @Override
             public void onChanged(Account account) {
                 if (account != null) {
                     //University Details
-                    tv_rollNo.setText(account.id);
+
+                    tv_rollNo.setText(account.roll);
                     tv_status.setText(account.status);
                     tv_section.setText("Nan");
                     tv_campus.setText("Nan");

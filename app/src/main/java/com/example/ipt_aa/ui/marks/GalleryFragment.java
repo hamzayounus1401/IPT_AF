@@ -13,12 +13,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.ipt_aa.R;
+import com.example.ipt_aa.Room.Models.Account;
 import com.example.ipt_aa.Room.Repository;
 import com.example.ipt_aa.SessionManager;
 
@@ -35,6 +38,7 @@ public class GalleryFragment extends Fragment {
     Button button;
     CircleImageView circleImageView;
     ArrayAdapter adapter;
+    TextView name, email;
     List<String> list = new ArrayList<>();
     SessionManager sessionManager;
     Repository repository;
@@ -48,8 +52,18 @@ public class GalleryFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
         button = root.findViewById(R.id.logout_button);
         sessionManager = new SessionManager(getContext());
+        name = root.findViewById(R.id.profile_name);
+        email = root.findViewById(R.id.profile_id);
         circleImageView = root.findViewById(R.id.profile_image);
-
+        galleryViewModel.getAccount().observe(getViewLifecycleOwner(), new Observer<Account>() {
+            @Override
+            public void onChanged(Account account) {
+                if (account != null) {
+                    name.setText(account.fullName);
+                    email.setText(account.email);
+                }
+            }
+        });
         circleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,31 +1,31 @@
 package com.example.ipt_aa.ui.marks;
 
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.ipt_aa.Room.Models.Account;
+import com.example.ipt_aa.Room.Repository;
+import com.example.ipt_aa.SessionManager;
 
-public class GalleryViewModel extends ViewModel {
+import java.util.HashMap;
 
-    private MutableLiveData<List<String>> mText;
+public class GalleryViewModel extends AndroidViewModel {
+    Repository repository;
+    SessionManager sessionManager;
 
-    public GalleryViewModel() {
-        mText = new MutableLiveData<>();
-        List<String> strings = new ArrayList<>();
-        strings.add("   Ipt");
-        strings.add("   ds");
-        strings.add("   wp");
-        strings.add("   project I");
-        strings.add("   Rm");
+    MutableLiveData<HashMap<String, String>> hashMapMutableLiveData = new MutableLiveData<>();
 
-
-        mText.setValue(strings);
-
+    public GalleryViewModel(@NonNull Application application) {
+        super(application);
+        repository = new Repository(application);
+        sessionManager = new SessionManager(application);
     }
 
-    public LiveData<List<String>> getList() {
-        return mText;
+    public LiveData<Account> getAccount() {
+        return repository.getStudent(sessionManager.getUserId());
     }
 }

@@ -59,7 +59,7 @@ public class HomeViewModel extends AndroidViewModel {
     public void inert(Student student) {
         Account account = new Account();
         account.fullName = student.getFullName();
-        account.id = student.getRoll();
+        account.roll = student.getRoll();
         account.address = student.getAddress();
         account.cnic = student.getCnic();
         account.email = student.getEmail();
@@ -68,6 +68,7 @@ public class HomeViewModel extends AndroidViewModel {
         account.status = student.getStatus();
         String[] dob = student.getDob().split("T");
         account.dob = dob[0];
+        account.id = student.getId();
         account.phone = student.getPhone();
         repository.updateAccount(account);
     }

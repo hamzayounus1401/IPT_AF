@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
@@ -24,6 +25,9 @@ public class NavigationDrawer extends AppCompatActivity implements MyFirebaseMes
 
     private AppBarConfiguration mAppBarConfiguration;
     TextView marks;
+    TextView name;
+    TextView email;
+    SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +35,7 @@ public class NavigationDrawer extends AppCompatActivity implements MyFirebaseMes
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
-
+        sessionManager = new SessionManager(getApplication());
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +46,17 @@ public class NavigationDrawer extends AppCompatActivity implements MyFirebaseMes
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(NavigationDrawer.this, drawer, R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
+        drawer.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+        name = navigationView.getHeaderView(0).findViewById(R.id.nav_profile_name);
+        email = navigationView.getHeaderView(0).findViewById(R.id.nav_profile_id);
+
+        name.setText(sessionManager.getUserRoll());
+        email.setText("");
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         //These lines should be added in the OnCreate() of your main activity
@@ -52,17 +67,21 @@ public class NavigationDrawer extends AppCompatActivity implements MyFirebaseMes
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         MyFirebaseMessagingService.setOnEventListener(this);
+
         SendFragment.setOnEventListener(this);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.navigation_drawer, menu);
+
         return true;
     }
 
@@ -76,8 +95,7 @@ public class NavigationDrawer extends AppCompatActivity implements MyFirebaseMes
     @Override
     protected void onStart() {
         super.onStart();
-        //SessionManager sessionManager = new SessionManager(getApplication());
-        //sessionManager.checkLogin();
+        sessionManager.checkLogin();
     }
 
 
@@ -108,5 +126,6 @@ public class NavigationDrawer extends AppCompatActivity implements MyFirebaseMes
         }
 
     }
+
 
 }
